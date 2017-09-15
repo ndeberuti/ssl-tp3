@@ -8,7 +8,7 @@
 //de Beruti, Nicolas Alejandro 149.700-5
 
 
-
+int nerrlex = 0;
 int main(){
 	
 	
