@@ -1,0 +1,1 @@
+%token identificador constante palabraReservada operador asignacion caracterPuntuacion
