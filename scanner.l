@@ -1,6 +1,6 @@
 - identificador {digito}{digito}{+}{letra}+
 - constante {digito}{digito}+
-- letra [a-z]{+}[A-Z]
+- letra [a-zA-Z]
 - digito [0-9]
 - palabraRervada "programa" | "fin" | "variables" | "codigo" | "definir" | "leer" | "escribir"
 - operador {operadorAditivo} | {operadorMultiplicativo}
