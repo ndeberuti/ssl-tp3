@@ -25,5 +25,5 @@ int main(){
 			puts("Memoria insuficiente"); return 2;
 			
 	}
-	
+	return 0;
 }	
