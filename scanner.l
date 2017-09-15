@@ -2,7 +2,7 @@
 - constante {digito}{digito}+
 - letra [a-z]{+}[A-Z]
 - digito [0-9]
-- palabraRervada "programa" | "fin" | "variables" | "código" | "definir" | "leer" | "escribir"
+- palabraRervada "programa" | "fin" | "variables" | "codigo" | "definir" | "leer" | "escribir"
 - operador {operadorAditivo} | {operadorMultiplicativo}
 - operadorAditivo "+" | "-"
 - operadorMultiplicativo "*" | "/"
