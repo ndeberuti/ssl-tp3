@@ -1,1 +1,9 @@
-%token identificador constante palabraReservada operador asignacion caracterPuntuacion
+struct token_t {
+    TOKEN,
+    IDENTIFICADOR,
+    CONSTANTE,
+    KEYWORD,
+    OPERADOR,
+    ASIGNACION,
+    PUNTUACION
+}

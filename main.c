@@ -7,11 +7,12 @@
 //Miravalles, Emanuel Gonzalo 127.099-0
 //de Beruti, Nicolas Alejandro 149.700-5
 
+#include<stdio.h>
+#include"scanner.h"
 
 int nerrlex = 0;
+
 int main(){
-	
-	
 	
 	switch ( yyparse() ) {
 		
