@@ -1,30 +1,23 @@
-//Profesor Eduardo Zuñiga
+//Profesor Eduardo Zuï¿½iga
 //Curso K2055
-//Grupo N°1
-//TP N°3
+//Grupo Nï¿½1
+//TP Nï¿½3
 //Integrantes: Luna, Brian Damian 155.369-0
 //Martin, Rodrigo Leonardo 160.255-0
 //Miravalles, Emanuel Gonzalo 127.099-0
 //de Beruti, Nicolas Alejandro 149.700-5
 
-#include<stdio.h>
-#include"scanner.h"
+#include <stdio.h>
+#include "scanner.h"
+#include "tokens.h"
 
-int nerrlex = 0;
+char* token_names[] = {"EOF" ,"IDENTIFICADOR", "CONSTANTE", "PALABRA RESERVADA", "OPERADOR", "ASIGNACION", "PUNTUACION"};
 
 int main(){
-	
-	switch ( yyparse() ) {
-		
-		case 0:
-			puts("Pertenece al LIC"); return 0;
-			
-		case 1:
-			puts("No pertenece al LIC"); return 1;
-			
-		case 2:
-			puts("Memoria insuficiente"); return 2;
-			
-	}
+	enum token t;
+	do {
+		t = yylex();
+		printf("Token: %s\t\tLexema: %s\n", token_names[t], yytext);
+	} while(t != FDT);
 	return 0;
 }	

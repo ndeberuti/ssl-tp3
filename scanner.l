@@ -1,41 +1,22 @@
 %{
 #include <stdio.h>
-enum token {
-    IDENTIFICADOR,
-    CONSTANTE,
-    KEYWORD,
-    OPERADOR,
-    ASIGNACION,
-    PUNTUACION,
-    ELEOF
-};
+#include "tokens.h"
 %}
-identificador {digito}{digito}+{letra}+
-constante {digito}{digito}+
+%option outfile="scanner.c"
+%option header-file="scanner.h"
 letra [a-zA-Z]
 digito [0-9]
-palabraRervada "programa" | "fin" | "variables" | "codigo" | "definir" | "leer" | "escribir"
+palabraReservada "programa" | "fin" | "variables" | "codigo" | "definir" | "leer" | "escribir"
 operador {operadorAditivo} | {operadorMultiplicativo}
 operadorAditivo "+" | "-"
 operadorMultiplicativo "*" | "/"
 asignacion ":="
 caracterPuntuacion "(" | ")" | "," | ";"
 %%
-identificador       { return IDENTIFICADOR; }
-constante           { return CONSTANTE; }
-palabraRervada      { return KEYWORD; }
-operador            { return OPERADOR; }
-asignacion          { return ASIGNACION; }
-caracterPuntuacion  { return PUNTUACION; }
-<<EOF>>	            { return ELEOF; }
-%%
-const char* token_names[] = {"IDENTIFICADOR", "CONSTANTE", "PALABRA RESERVADA", "OPERADOR", "ASIGNACION", "PUNTUACION"};
-
-int main() {
-    enum token t;
-    do {
-        t = yylex();
-        printf("Token: %s\t\tValor: %s", token_names[t], yytext);
-    } while(t != ELEOF); 
-    return 0;
-}
+{digito}{digito}+{letra}+       { return IDENTIFICADOR; }
+{digito}{digito}+               { return CONSTANTE; }
+palabraReservada                { return KEYWORD; }
+operador                        { return OPERADOR; }
+asignacion                      { return ASIGNACION; }
+caracterPuntuacion              { return PUNTUACION; }
+<<EOF>>	                        { return FDT; }
