@@ -6,7 +6,6 @@ enum token {
     OPERADOR,
     ASIGNACION,
     PUNTUACION
-	
 };
 
 
