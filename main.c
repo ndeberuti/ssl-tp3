@@ -19,7 +19,7 @@ int main(){
 		t = yylex();
 if(t == OPERADOR || t == PUNTUACION )	{	
 
-printf("TOKEN : '%c'", yytext);
+printf("Token : '%c'", yytext);
 }
 
 else{
