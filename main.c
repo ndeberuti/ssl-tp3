@@ -1,7 +1,7 @@
-//Profesor Eduardo Zu�iga
+//Profesor Eduardo Zuniga
 //Curso K2055
-//Grupo N�1
-//TP N�3
+//Grupo N1
+//TP N3
 //Integrantes: Luna, Brian Damian 155.369-0
 //Martin, Rodrigo Leonardo 160.255-0
 //Miravalles, Emanuel Gonzalo 127.099-0
