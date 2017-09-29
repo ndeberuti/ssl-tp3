@@ -6,17 +6,22 @@
 %option header-file="scanner.h"
 letra [a-zA-Z]
 digito [0-9]
-palabraReservada "programa" | "fin" | "variables" | "codigo" | "definir" | "leer" | "escribir"
-operador {operadorAditivo} | {operadorMultiplicativo}
-operadorAditivo "+" | "-"
-operadorMultiplicativo "*" | "/"
-asignacion ":="
-caracterPuntuacion "(" | ")" | "," | ";"
+operadorAditivo [+-]
+operadorMultiplicativo [*/]
+caracterPuntuacion [(),;]
 %%
+programa                        { return KEYWORD; }
+fin                             { return KEYWORD; }
+variables                       { return KEYWORD; }
+codigo                          { return KEYWORD; }
+definir                         { return KEYWORD; }
+leer                            { return KEYWORD; }
+escribir                        { return KEYWORD; }
 {letra}({letra}|{digito})*      { return IDENTIFICADOR; }
-{digito}+               		{ return CONSTANTE; }
-palabraReservada                { return KEYWORD; }
-operador                        { return OPERADOR; }
-asignacion                      { return ASIGNACION; }
-caracterPuntuacion              { return PUNTUACION; }
+{digito}+               	    { return CONSTANTE; }
+":="                            { return ASIGNACION; }
+{operadorAditivo}        |       
+{operadorMultiplicativo} { return OPERADOR; }
+{caracterPuntuacion}            { return PUNTUACION; }
 <<EOF>>	                        { return FDT; }
+.                               {;}
