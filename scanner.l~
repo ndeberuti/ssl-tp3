@@ -10,7 +10,7 @@ enum token {
     ELEOF
 };
 %}
-identificador {digito}{digito}+{letra}+
+identificador {digito}{digito}{+}{letra}+
 constante {digito}{digito}+
 letra [a-zA-Z]
 digito [0-9]
@@ -21,13 +21,13 @@ operadorMultiplicativo "*" | "/"
 asignacion ":="
 caracterPuntuacion "(" | ")" | "," | ";"
 %%
-identificador       { return IDENTIFICADOR; }
-constante           { return CONSTANTE; }
-palabraRervada      { return KEYWORD; }
-operador            { return OPERADOR; }
-asignacion          { return ASIGNACION; }
-caracterPuntuacion  { return PUNTUACION; }
-<<EOF>>	            { return ELEOF; }
+identificador       return IDENTIFICADOR;
+constante           return CONSTANTE;
+palabraRervada      return KEYWORD;
+operador            return OPERADOR;
+asignacion          return ASIGNACION;
+caracterPuntuacion  return PUNTUACION;
+<<EOF>>				return ELEOF;
 %%
 const char* token_names[] = {"IDENTIFICADOR", "CONSTANTE", "PALABRA RESERVADA", "OPERADOR", "ASIGNACION", "PUNTUACION"};
 

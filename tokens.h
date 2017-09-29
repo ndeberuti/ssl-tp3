@@ -1,9 +1,9 @@
-struct token_t {
-    TOKEN,
+enum token {
     IDENTIFICADOR,
     CONSTANTE,
     KEYWORD,
     OPERADOR,
     ASIGNACION,
-    PUNTUACION
+    PUNTUACION,
+    EOF
 }
