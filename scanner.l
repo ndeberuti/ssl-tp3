@@ -1,5 +1,5 @@
 %{
-#include <stdio.h>
+
 #include "tokens.h"
 %}
 %option outfile="scanner.c"
