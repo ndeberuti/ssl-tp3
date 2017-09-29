@@ -17,7 +17,15 @@ int main(){
 	enum token t;
 	do {
 		t = yylex();
-		printf("Token: %s\t\tLexema: %s\n", token_names[t], yytext);
+if(t == OPERADOR || t == PUNTUACION )	{	
+
+printf("TOKEN : '%c'", yytext);
+}
+
+else{
+printf("Token: %s\t\tLexema: %s\n", token_names[t], yytext);
+}	
+	
 	} while(t != FDT);
 	return 0;
 }	
