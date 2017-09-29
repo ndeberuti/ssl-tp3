@@ -13,8 +13,8 @@ operadorMultiplicativo "*" | "/"
 asignacion ":="
 caracterPuntuacion "(" | ")" | "," | ";"
 %%
-{digito}{digito}+{letra}+       { return IDENTIFICADOR; }
-{digito}{digito}+               { return CONSTANTE; }
+{letra}({letra}|{digito})*      { return IDENTIFICADOR; }
+{digito}+               		{ return CONSTANTE; }
 palabraReservada                { return KEYWORD; }
 operador                        { return OPERADOR; }
 asignacion                      { return ASIGNACION; }
