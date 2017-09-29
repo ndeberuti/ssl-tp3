@@ -5,5 +5,9 @@ enum token {
     KEYWORD,
     OPERADOR,
     ASIGNACION,
-    PUNTUACION
-}
+    PUNTUACION,
+	
+};
+
+
+
