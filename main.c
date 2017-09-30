@@ -11,21 +11,38 @@
 #include "scanner.h"
 #include "tokens.h"
 
-char* token_names[] = {"EOF" ,"IDENTIFICADOR", "CONSTANTE", "PALABRA RESERVADA", "OPERADOR", "ASIGNACION", "PUNTUACION"};
+char* token_names[] = {"Fin de Archivo" ,
+						"Identificador",
+						"Constante",
+						"Programa",
+						"Variables",
+						"Definir",
+						"Codigo",
+						"Leer",
+						"Escribir",
+						"Fin",
+						"Operador",
+						"Asignacion",
+						"Puntuacion",
+						"Error léxico: cadena desconocida: ",
+						"Error léxico: constante con sufijo inválido: ",
+						"Error léxico: identificador inválido: "	
+						};
 
 int main(){
 	enum token t;
 	do {
 		t = yylex();
-if(t == OPERADOR || t == PUNTUACION )	{	
-
-printf("Token : '%c'", yytext);
-}
-
-else{
-printf("Token: %s\t\tLexema: %s\n", token_names[t], yytext);
-}	
-	
+		if(t == OPERADOR || t == PUNTUACION){	
+			printf("Token : '%s'\n", yytext);
+		}
+		else if(t == FDT || (t >= R_PROGRAMA && t <= R_FIN) || t == ASIGNACION) {
+			printf("Token: %s\n", token_names[t]);	
+		}
+		else {
+			printf("Token: %s\t\tLexema: %s\n", token_names[t], yytext);
+		}
+			
 	} while(t != FDT);
 	return 0;
 }	

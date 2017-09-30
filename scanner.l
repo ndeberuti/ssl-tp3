@@ -10,18 +10,18 @@ operadorAditivo [+-]
 operadorMultiplicativo [*/]
 caracterPuntuacion [(),;]
 %%
-programa                        { return KEYWORD; }
-fin                             { return KEYWORD; }
-variables                       { return KEYWORD; }
-codigo                          { return KEYWORD; }
-definir                         { return KEYWORD; }
-leer                            { return KEYWORD; }
-escribir                        { return KEYWORD; }
-{letra}({letra}|{digito})*      { return IDENTIFICADOR; }
-{digito}+               	    { return CONSTANTE; }
-":="                            { return ASIGNACION; }
-{operadorAditivo}        |       
-{operadorMultiplicativo} { return OPERADOR; }
-{caracterPuntuacion}            { return PUNTUACION; }
-<<EOF>>	                        { return FDT; }
-.                               {;}
+programa                                 { return R_PROGRAMA; }
+fin                                      { return R_FIN; }
+variables                                { return R_VARIABLES; }
+codigo                                   { return R_CODIGO; }
+definir                                  { return R_DEFINIR; }
+leer                                     { return R_LEER; }
+escribir                                 { return R_ESCRIBIR; }
+{letra}({letra}|{digito})*               { return IDENTIFICADOR; }
+{digito}+               	             { return CONSTANTE; }
+":="                                     { return ASIGNACION; }
+{operadorAditivo}                        |       
+{operadorMultiplicativo}                 { return OPERADOR; }
+{caracterPuntuacion}                     { return PUNTUACION; }
+"//".*\n                                 |
+.                                        {;}

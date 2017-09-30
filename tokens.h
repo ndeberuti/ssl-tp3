@@ -2,10 +2,19 @@ enum token {
     FDT,
     IDENTIFICADOR,
     CONSTANTE,
-    KEYWORD,
+    R_PROGRAMA,
+    R_VARIABLES,
+    R_DEFINIR,
+    R_CODIGO,
+    R_LEER,
+    R_ESCRIBIR,
+    R_FIN,
     OPERADOR,
     ASIGNACION,
-    PUNTUACION
+    PUNTUACION,
+    E_CADENA,
+    E_SUFIJO,
+    E_IDENTIFICADOR	
 };
 
 
