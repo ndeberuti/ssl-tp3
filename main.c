@@ -33,16 +33,15 @@ int main(){
 	enum token t;
 	do {
 		t = yylex();
-		if(t == OPERADOR || t == PUNTUACION){	
+		if(t > TOPE){	
 			printf("Token : '%s'\n", yytext);
 		}
-		else if(t == FDT || (t >= R_PROGRAMA && t <= R_FIN) || t == ASIGNACION) {
-			printf("Token: %s\n", token_names[t]);	
-		}
-		else {
+		else if(t == IDENTIFICADOR || t == CONSTANTE) {
 			printf("Token: %s\t\tLexema: %s\n", token_names[t], yytext);
 		}
-			
+		else {
+			printf("Token: %s\n", token_names[t]);	
+		}			
 	} while(t != FDT);
 	return 0;
 }	

@@ -319,7 +319,7 @@ extern int yylex (void);
 #undef YY_DECL
 #endif
 
-#line 28 "scanner.l"
+#line 32 "scanner.l"
 
 #line 324 "scanner.h"
 #undef yyIN_HEADER

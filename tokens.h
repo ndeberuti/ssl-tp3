@@ -14,7 +14,8 @@ enum token {
     PUNTUACION,
     E_CADENA,
     E_SUFIJO,
-    E_IDENTIFICADOR	
+    E_IDENTIFICADOR,
+    TOPE	
 };
 
 
