@@ -1,32 +1,30 @@
-//Profesor Eduardo Zuniga
-//Curso K2055
-//Grupo N1
-//TP N3
-//Integrantes: Luna, Brian Damian 155.369-0
-//Martin, Rodrigo Leonardo 160.255-0
-//Miravalles, Emanuel Gonzalo 127.099-0
-//de Beruti, Nicolas Alejandro 149.700-5
-
+/*
+Profesor: Eduardo Zúñiga
+Curso: K2055
+Grupo: 1
+TP: 3
+Integrantes:
+				Luna, Brian Damian				155.369-0
+				Martin, Rodrigo Leonardo		160.255-0
+				Miravalles, Emanuel Gonzalo		127.099-0
+				de Beruti, Nicolas Alejandro	149.700-5
+*/
 #include <stdio.h>
 #include "scanner.h"
 #include "tokens.h"
 
-char* token_names[] = {"Fin de Archivo" ,
+char* token_names[] = { "Fin de Archivo" ,
 						"Identificador",
 						"Constante",
 						"Programa",
 						"Variables",
 						"Definir",
-						"Codigo",
+						"Código",
 						"Leer",
 						"Escribir",
 						"Fin",
-						"Operador",
-						"Asignacion",
-						"Puntuacion",
-						"Error léxico: cadena desconocida: ",
-						"Error léxico: constante con sufijo inválido: ",
-						"Error léxico: identificador inválido: "	
+						"Asignación",
+						"Puntuación"	
 						};
 
 int main(){
@@ -34,10 +32,10 @@ int main(){
 	do {
 		t = yylex();
 		if(t > TOPE){	
-			printf("Token : '%s'\n", yytext);
+			printf("Token: '%s'\n", yytext);
 		}
 		else if(t == IDENTIFICADOR || t == CONSTANTE) {
-			printf("Token: %s\t\tLexema: %s\n", token_names[t], yytext);
+			printf("Token: %s\tLexema: %s\n", token_names[t], yytext);
 		}
 		else {
 			printf("Token: %s\n", token_names[t]);	

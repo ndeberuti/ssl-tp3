@@ -9,12 +9,8 @@ enum token {
     R_LEER,
     R_ESCRIBIR,
     R_FIN,
-    OPERADOR,
     ASIGNACION,
     PUNTUACION,
-    E_CADENA,
-    E_SUFIJO,
-    E_IDENTIFICADOR,
     TOPE	
 };
 
